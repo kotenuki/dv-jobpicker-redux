@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Local reference configuration
+Directory.Build.targets
+[Pp]ackage.ps1
+[Bb]uild/
+[Dd]ist/
+
 # User-specific files
 *.rsuser
 *.suo

@@ -1,0 +1,11 @@
+{
+  "Id": "dv-jobpicker-redux",
+  "Version": "1.0.0",
+  "DisplayName": "Job Picker Redux",
+  "Author": "Kotenuki",
+  "AssemblyName": "DvJobPickerRedux.dll",
+  "EntryMethod": "DvJobPickerRedux.Main.Load",
+  "ManagerVersion": "0.27.3",
+  "Homepage": "",
+  "Repository": "https://raw.githubusercontent.com/kotenuki/dv-jobpicker-redux/main/repository.json"
+}
