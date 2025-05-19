@@ -5,26 +5,23 @@
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
-    <ItemGroup>
-        <EditorConfigFiles Remove="C:\Users\cinju\source\repos\dv-jobpicker-redux\DvJobPickerRedux\.editorconfig" />
-    </ItemGroup>
-
     <!-- Derail Valley -->
     <ItemGroup>
-        <Reference Include="Assembly-CSharp" />
-        <Reference Include="DV.ThingTypes" />
-        <Reference Include="DV.Utils" />
-        <Reference Include="DV.Localization" />
-        <Reference Include="WorldStreamer" />
+        <Reference Include="Assembly-CSharp"/>
+        <Reference Include="DV.ThingTypes"/>
+        <Reference Include="DV.Utils"/>
+        <Reference Include="DV.RailTrack"/>
+        <Reference Include="DV.Localization"/>
+        <Reference Include="WorldStreamer"/>
     </ItemGroup>
 
     <!-- Unity -->
     <ItemGroup>
-        <Reference Include="UnityEngine" />
-        <Reference Include="UnityEngine.CoreModule" />
-        <Reference Include="UnityEngine.PhysicsModule" />
-        <Reference Include="UnityEngine.UI" />
-        <Reference Include="Unity.TextMeshPro" />
+        <Reference Include="UnityEngine"/>
+        <Reference Include="UnityEngine.CoreModule"/>
+        <Reference Include="UnityEngine.PhysicsModule"/>
+        <Reference Include="UnityEngine.UI"/>
+        <Reference Include="Unity.TextMeshPro"/>
     </ItemGroup>
 
     <!-- Mod Loader -->
@@ -33,21 +30,21 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="UnityModManager" Version="0.27.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <PackageReference Include="UnityModManager" Version="0.27.2"/>
     </ItemGroup>
 
     <!-- Null Checking -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-        <PackageReference Include="Nullable" Version="1.3.1" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
+        <PackageReference Include="Nullable" Version="1.3.1" PrivateAssets="all"/>
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <!-- Copy to build folder -->
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="../build/" />
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="../build/"/>
 
         <!-- Package after Release build -->
-        <Exec Command="pwsh -Command &quot;(../package.ps1)&quot;" />
+        <Exec Command="pwsh -Command &quot;(../package.ps1)&quot;"/>
     </Target>
 </Project>

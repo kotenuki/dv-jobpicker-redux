@@ -1,5 +1,6 @@
 {
   "Releases": [
-    { "Id": "dv-jobpicker-redux", "Version": "1.0.0", "DownloadUrl": "https://github.com/kotenuki/dv-jobpicker-redux/releases/download/v1.0.0/dv-jobpicker-redux_v1.0.0.zip" }
+    { "Id": "dv-jobpicker-redux", "Version": "1.0.0", "DownloadUrl": "https://github.com/kotenuki/dv-jobpicker-redux/releases/download/v1.0.0/dv-jobpicker-redux_v1.0.0.zip" },
+    { "Id": "dv-jobpicker-redux", "Version": "1.1.0", "DownloadUrl": "https://github.com/kotenuki/dv-jobpicker-redux/releases/download/v1.1.0/dv-jobpicker-redux_v1.1.0.zip" }
   ]
 }

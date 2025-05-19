@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using DvJobPickerRedux.Managers;
 using HarmonyLib;
 using UnityModManagerNet;
 
 namespace DvJobPickerRedux;
 
+#if DEBUG
 [EnableReloading]
+#endif
 internal class Main
 {
     public static UnityModManager.ModEntry? Mod;
     public static Settings Settings = new();
 
-    public static void DebugLog(Func<string> message)
+    public static void DebugLog(string message)
     {
-        if (Settings.EnableLogging) Mod?.Logger.Log(message());
+        if (Settings.EnableLogging) Mod?.Logger.Log(message);
     }
 
     public static bool Load(UnityModManager.ModEntry modEntry)
@@ -25,6 +26,8 @@ internal class Main
         {
             var loaded = UnityModManager.ModSettings.Load<Settings>(modEntry);
             Settings = loaded.Version == Mod.Info.Version ? loaded : new Settings();
+
+            TrackManager.LoadTrackConfiguration();
         }
         catch
         {
@@ -58,12 +61,10 @@ internal class Main
             if (value)
             {
                 harmony.PatchAll();
-            }
-            else
-            {
-                harmony.UnpatchAll(modEntry.Info.Id);
+                return true;
             }
 
+            harmony.UnpatchAll(modEntry.Info.Id);
             return true;
         }
         catch (Exception ex)

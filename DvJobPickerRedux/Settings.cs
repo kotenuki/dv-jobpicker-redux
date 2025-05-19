@@ -20,15 +20,21 @@ public class Settings : UnityModManager.ModSettings, IDrawable
     [Draw("Logistics Jobs?", Tooltip = "Allow logistic jobs to generate.")]
     public bool LogisticJobs = true;
 
-    [Draw("Minimum Cars?", Min = 1d, Max = 19d, Tooltip = "The minimum car amount per job. Recommended: 5")]
+    [Draw("Minimum Cars?", Min = 1, Max = 10, Tooltip = "The minimum car amount per job. Warning, the higher this number the fewer jobs will spawn. Recommended: 3")]
     public int MinimumCars = 3;
 
     [Draw("Use both Output and Storage Tracks?", Tooltip = "Use both output and storage tracks for jobs.")]
     public bool CombineTracks = true;
 
+    [Draw("Use Passenger Tracks?", Tooltip = "Use passenger storage tracks for jobs.")]
+    public bool UsePassengerTracks = false;
+
+    [Draw("Live Dangerously?", VisibleOn = "UsePassengerTracks|true",
+        Tooltip = "Use passenger loading tracks for jobs. Warning, this can and will spawn jobs in loading lanes, which at some stations can be detrimental to your health.")]
+    public bool LiveDangerously = false;
+
     [Draw("Enable Debug Logging?")]
     public bool EnableLogging = false;
-
 
     public override void Save(UnityModManager.ModEntry entry)
     {
