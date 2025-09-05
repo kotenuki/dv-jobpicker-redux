@@ -1,6 +1,6 @@
 {
   "Id": "dv-jobpicker-redux",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "DisplayName": "Job Picker Redux",
   "Author": "Kotenuki",
   "AssemblyName": "DvJobPickerRedux.dll",

@@ -20,8 +20,11 @@ public class Settings : UnityModManager.ModSettings, IDrawable
     [Draw("Logistics Jobs?", Tooltip = "Allow logistic jobs to generate.")]
     public bool LogisticJobs = true;
 
-    [Draw("Minimum Cars?", Min = 1, Max = 10, Tooltip = "The minimum car amount per job. Warning, the higher this number the fewer jobs will spawn. Recommended: 3")]
+    [Draw("Minimum Cars?", Min = 3, Max = 10, Tooltip = "The minimum car amount per job. Warning, the higher this number the fewer jobs will spawn. Recommended: 3")]
     public int MinimumCars = 3;
+
+    [Draw("Maximum Cars?", Min = 6, Max = 20, Tooltip = "The maximum car amount per job. Recommended: 20")]
+    public int MaximumCars = 20;
 
     [Draw("Use both Output and Storage Tracks?", Tooltip = "Use both output and storage tracks for jobs.")]
     public bool CombineTracks = true;

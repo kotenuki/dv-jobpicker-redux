@@ -24,6 +24,9 @@ internal class StationProceduralJobsRulesetAwakePatch
         Main.DebugLog($"Setting Minimum Car Length: {Main.Settings.MinimumCars}");
         __instance.minCarsPerJob = Main.Settings.MinimumCars;
 
+        Main.DebugLog($"Setting Maximum Car Length: {Main.Settings.MinimumCars}");
+        __instance.maxCarsPerJob = Main.Settings.MaximumCars;
+
         __instance.maxShuntingStorageTracks = Main.Settings.UnloadShuntJobs || Main.Settings.LoadShuntJobs ? 3 : 0;
     }
 }
